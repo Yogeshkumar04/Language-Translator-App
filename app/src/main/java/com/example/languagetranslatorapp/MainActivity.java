@@ -141,10 +141,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_PERMISSION_CODE){
-//            if (requestCode == RESULT_OK && data != null){
+            if (data != null){
                 ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                 sourceEdt.setText(result.get(0));
-//            }
+            }
         }
     }
 
