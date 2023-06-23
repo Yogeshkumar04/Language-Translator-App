@@ -60,22 +60,51 @@
     </LinearLayout>
 
 
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:elevation="8dp"-->
+<!--        android:hint="Enter Text"-->
+<!--        android:padding="5dp"-->
+<!--        android:textColorHint="@color/white"-->
+<!--        app:boxBackgroundMode="none"-->
+<!--        app:hintTextColor="@color/white">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/idEdtSource"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:ems="10"-->
+<!--            android:gravity="center"-->
+<!--            android:importantForAutofill="no"-->
+<!--            android:inputType="textMultiLine|textImeMultiLine"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textColorHint="@color/white"-->
+<!--            android:textSize="14sp" />-->
 
 
-    <EditText
-        android:id="@+id/idEdtSource"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
-        android:hint="Source Text"
-        android:textColorHint="@color/white"
-        android:padding="5dp"
-        android:textColor="@color/white"
-        android:importantForAutofill="no"
-        android:inputType="textImeMultiLine|textMultiLine"
-        android:textSize="14sp"
-        android:textAlignment="center"/>
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
+
+        <EditText
+            android:id="@+id/idEdtSource"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:hint="Source Text"
+            android:textColorHint="@color/white"
+            android:padding="5dp"
+            android:ems="10"
+            android:textColor="@color/white"
+            android:importantForAutofill="no"
+            android:inputType="textImeMultiLine|textMultiLine"
+            android:textSize="14sp"
+            android:textAlignment="center"/>
 
 
     <TextView
@@ -83,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="OK"
+        android:text="Or"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"

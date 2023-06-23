@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private Spinner fromSpinner, toSpinner;
 
     private EditText sourceEdt;
+
+//    private TextInputEditText sourceEdt;
     private ImageView micIV;
     private MaterialButton translateBtn;
     private TextView translatedTV;
@@ -116,10 +118,14 @@ public class MainActivity extends AppCompatActivity {
         micIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-                intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Speak to convert into text");
+
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Speak to Translate");
                 try {
                     startActivityForResult(intent, REQUEST_PERMISSION_CODE);
                 }catch (Exception e){
@@ -134,17 +140,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==REQUEST_PERMISSION_CODE){
-            if (requestCode==RESULT_OK && data!=null){
+        if (requestCode == REQUEST_PERMISSION_CODE){
+//            if (requestCode == RESULT_OK && data != null){
                 ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                 sourceEdt.setText(result.get(0));
-            }
+//            }
         }
     }
 
 
     private void translateText(int fromLanguageCode, int toLanguageCode, String source){
-        translatedTV.setText("Downloading Modle .... ");
+        translatedTV.setText("Downloading Model.... ");
         //
         FirebaseTranslatorOptions options = new FirebaseTranslatorOptions.Builder()
                 .setSourceLanguage(fromLanguageCode)
